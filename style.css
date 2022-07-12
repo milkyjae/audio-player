@@ -1,0 +1,245 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    padding-top: 300px;
+    display: block; /* flex */
+    align-items: center;
+    height: 75vh;
+    background-color: #EDAC42;
+    color: black;
+}
+
+.playlist {   
+    display: flex;
+    height: 20vh;
+    max-width: 500px;
+    margin: auto;
+    align-items: center;
+    justify-content: center;   
+}
+
+.tracks {
+    display: flex;
+    padding: 30px;
+    width: 200px;
+    height: 70px;
+    margin: auto;
+    text-align: center;
+    align-items: center; 
+    justify-content: center; 
+    position: relative;
+    perspective: 1000px;
+    -webkit-perspective: 1000px;
+}
+
+.tracks a {
+    color: black;
+    text-decoration: none;
+}
+
+.one {
+    width: 150px;
+    height: 70px;
+    border: 2px solid black;
+    border-radius: 50%;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center; 
+    position: relative;
+    animation: sway-one 10s infinite linear;
+    cursor: pointer;
+}
+
+.one:hover {
+    background-color: black;
+    -webkit-text-fill-color: #EDAC42;
+    font-size: 130%;
+    transition: all .3s linear;
+}
+
+h4 {
+
+    -webkit-text-stroke-width: .1px;
+    -webkit-text-stroke-color: black;
+    transition: all .3s linear;
+}
+
+.clicked {
+
+    width: 150px;
+    height: 70px;
+    border: 25px solid black;
+    border-radius: 50%;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center; 
+    position: relative;
+    background-color: black;
+    -webkit-text-fill-color: #EDAC42;
+    font-size: 130%;
+    transition: all .3s linear;
+    animation: sway-one 10s infinite linear;
+    cursor: pointer;
+
+}
+
+
+ @keyframes sway-one { 
+    0% {
+        transform: translatey(0);
+     }
+     50% {
+         transform: translatey(50px);
+     }
+ }
+
+.two {
+    width: 150px;
+    height: 70px;
+    border: 2px solid black;
+    border-radius: 50%;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center; 
+    position: relative;
+    animation: sway-two 12s infinite linear;
+    cursor: pointer;
+}
+
+.two:hover {
+    background-color: black;
+    -webkit-text-fill-color: #EDAC42;
+    font-size: 130%;
+    transition: all .3s linear;
+}
+
+ @keyframes sway-two { 
+    0% {
+        transform: translatey(0);
+     }
+    50% {
+         transform: translatey(40px);
+     }
+ }
+.three {
+    width: 150px;
+    height: 70px;
+    border: 2px solid black;
+    border-radius: 50%;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center; 
+    position: relative;
+    animation: sway-three 10s infinite linear;
+    cursor: pointer;
+}
+
+.three:hover {
+    background-color: black;
+    -webkit-text-fill-color: #EDAC42;
+    font-size: 130%;
+    transition: all .3s linear;
+}
+
+ @keyframes sway-three { 
+    0% {
+        transform: translatey(10);
+     }
+     50% {
+         transform: translatey(50px);
+     }
+ }
+
+.player {
+    width: 80%;
+    margin: auto; 
+    background-color: transparent;
+    display: grid;
+    grid-template-columns: 48px 1fr 48px;
+    grid-gap: 16px;
+    padding: 8px 24px;
+    position: relative;
+    border: 2px solid black;
+    border-color: black;
+    border-radius: 15px;
+}
+
+.control,#current {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-block: 16px;
+}
+
+#playbtn {
+    font-size: 24px;
+    color: transparent;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: black;
+    -webkit-text-fill-color: black;
+    cursor: pointer;
+}
+
+#playbtn:hover {
+    -webkit-text-fill-color: transparent;
+}
+
+#current {
+    text-align: right;
+}
+
+.bar {
+    --space: -4px;
+    text-align: center;
+    overflow: hidden;
+    left: var(--space);
+    right: var(--space);
+    top: var(--space);
+    bottom: var(--space);
+    position: center;
+    border-radius: 10px;
+    z-index: -2;
+}
+
+/* Progress Bar*/
+.progress_bar {
+    height: 2px;
+    margin-bottom: 28px;
+    width: relative;
+    background-color:black;
+    margin-top: 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    
+}
+
+.progressed {
+   height: 3px;
+   background-color: black;
+   width: 0%;
+   transition: all 0.2s linear;
+   position: relative;
+}
+
+.progressed::after {
+   content: '';
+   position: absolute;
+   right: -10px;
+   top: -5px;
+   width: 12px;
+   height: 12px;
+   border-radius: 10px;
+   background-color: black;
+   
+}
+
